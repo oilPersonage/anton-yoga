@@ -2,7 +2,7 @@ const headerTextSlider = document.querySelector('#headerTextSlider');
 const sliderItems = [...document.querySelectorAll('.header__textItem')];
 let activeSlide = 0;
 
-const isMobile = window.matchMedia('(max-width: 768px)').matches
+const isMobile = window.matchMedia('(max-width: 1389px)').matches
 
 
 // arrows

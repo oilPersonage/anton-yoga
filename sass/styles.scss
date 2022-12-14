@@ -228,7 +228,7 @@ svg {
 
 .social {
   bottom: $md;
-  right: $md * 2;
+  right: $lg;
   align-items: flex-end;
 
   &__icon {
@@ -277,7 +277,7 @@ svg {
 
 .navigation {
   top: $sm;
-  right: $md * 2;
+  right: $lg;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -834,6 +834,7 @@ svg {
   position: relative;
   z-index: 4;
   box-shadow: 1px -3px 90px 21px rgb(0 0 0 / 7%);
+  background: $gray;
   h3 {
     font: 20px  Source Sans Pro;
   }
@@ -914,9 +915,10 @@ svg {
       &:first-child {
         margin-top: $md;
       }
-      &:last-child {
-        margin-bottom: $md * 2;
-      }
+    }
+    .button {
+      margin-bottom: $lg;
+      width: max-content;
     }
   }
 }

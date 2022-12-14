@@ -1,5 +1,7 @@
 import anime from './libs/anime.min.js';
 
+const isMobile = window.matchMedia('(max-width: 480px)').matches;
+
 const navigation = document.querySelector('#navigation')
 const links = [...document.querySelectorAll("a[data-id]")]
 const menu = document.querySelector('#menu')
@@ -35,7 +37,7 @@ function toggleMenu() {
 		body.classList.toggle('menuOpen')
 		anime({
 			targets: nav,
-			translateX: [400, 50],
+			translateX: [400, isMobile ? 0 : 50],
 			easing: 'easeOutElastic(1, .95)',
 			complete() {
 				isAllowClick = true;
@@ -51,16 +53,18 @@ function onClickNav(e) {
 	const isNavClick = !e.target.getAttribute('data-scroll')
 	const scrollTarget = document.querySelector(`#${id}`)
 
-	scrollTarget.scrollIntoView({ block: isNavClick ? "start" : "center", behavior: "smooth" })
+	scrollTarget.scrollIntoView({ block: isNavClick || isMobile ? "start" : "center", behavior: "smooth" })
 
 
 	if (isNavClick) {
 		toggleMenu();
 	} else {
+		if (!isMobile) {
+			// Цены
+			cards.forEach(card => card.classList.remove('open')); // убираю белый фон
+			cardsContent.forEach(content => content.style.height = '0px'); // скрываю все элементы
+		}
 
-		// Цены
-		cards.forEach(card => card.classList.remove('open')); // убираю белый фон
-		cardsContent.forEach(content => content.style.height = '0px'); // скрываю все элементы
 
 		// после всего клик по элементу с id
 		scrollTarget.click();
@@ -74,6 +78,6 @@ menu.onclick = function (e) {
 	}
 }
 
-links.forEach(link => link.onclick = onClickNav)
+links.forEach(link => link.onclick = (e) => isAllowClick && onClickNav(e))
 
 navigation.onclick = toggleMenu;
