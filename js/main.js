@@ -5,7 +5,7 @@ import './header'
 import './tabs'
 import './prices'
 
-//
-// if (module.hot) {
-//     module.hot.accept();
-// }
+
+if (module.hot) {
+    module.hot.accept();
+}
