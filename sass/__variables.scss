@@ -1,0 +1,25 @@
+$body: #F5F5F5;
+$accent: #FF9900;
+$black: #242424;
+$gray: #efefef;
+//$gray: #D9D9D9;
+$white: white;
+
+$lg: 72px;
+$md: 24px;
+$sm: 12px;
+$base: 4px;
+
+$menuWidth: 354px;
+
+$transition: 0.3s ease-out;
+
+@mixin transitionFast {
+  transition: 0.15s cubic-bezier(.17,.67,.7,1.4);
+}
+@mixin transitionNormal {
+  transition: 0.6s cubic-bezier(.14,.58,.44,1.1);
+}
+@mixin transitionSlow {
+  transition: 1.5s ease-out;
+}

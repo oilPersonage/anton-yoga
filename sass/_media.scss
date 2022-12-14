@@ -1,0 +1,107 @@
+@import "_variables";
+
+@media screen and (max-width: 768px) {
+  section {
+    padding-top: $lg;
+  }
+  .logotype {
+    left: $md;
+    top: $sm;
+  }
+  .header {
+    height: auto;
+    &__content {
+      height: auto;
+    }
+    &__greetings {
+      padding-top: 0;
+      align-items: center;
+      margin-bottom: $md * 4;
+    }
+    &__heading {
+      text-align: center;
+      font-size: 24px;
+    }
+    &__description {
+      text-align: center;
+    }
+    &__img {
+      position: static;
+      padding-top: $lg;
+      transform: none;
+    }
+
+    &__textItem {
+      h2 {
+        font-size: 60px;
+        width: min-content;
+        margin-bottom: $md;
+        line-height: 0.8;
+        margin-top: 10px;
+      }
+    }
+
+    &__info {
+      position: static;
+      margin-left: $md;
+      p {
+        line-height: 1.3;
+      }
+    }
+
+    .button {
+      margin: 0 auto;
+    }
+  }
+  .navigation, .social {
+    right: $md;
+  }
+  .menu {
+    &.open .nav {
+      transform: translateX(0);
+    }
+    &.hide .nav {
+      transform: translateX(404px);
+    }
+  }
+  .arrows {
+    margin-left: auto;
+    width: min-content;
+    &__next {
+      margin-right: 0;
+    }
+  }
+  .nav {
+    width: calc(100vw + 50px);
+  }
+  .mobileBar {
+    display: inline-block;
+  }
+
+  .practices {
+    position: relative;
+    z-index: 2;
+    &__tabs {
+      flex-direction: column;
+      align-items: stretch;
+      font-size: 16px;
+    }
+    &__absolute {
+      height: $md * 2;
+    }
+    &__content {
+      min-width: 100%;
+      max-width: 0;
+      margin-bottom: $md;
+      font-size: 16px;
+    }
+
+    &__img {
+      display: none;
+      z-index: 1;
+      opacity: 0.2;
+      width: 100%;
+      right: 53%
+    }
+  }
+}
