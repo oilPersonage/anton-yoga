@@ -16,4 +16,4 @@ function e(e,t){var r="undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@itera
 },{"./libs/anime.min.js":"Jo3k"}],"WdKE":[function(require,module,exports) {
 "use strict";require("./onLoad"),require("./menu"),require("./scroll"),require("./header"),require("./tabs"),require("./prices");
 },{"./onLoad":"Bj5E","./menu":"rNZ9","./scroll":"ZBey","./header":"AHaM","./tabs":"BdMQ","./prices":"E55q"}]},{},["WdKE"], null)
-//# sourceMappingURL=/main.530f6789.js.map
+//# sourceMappingURL=main.530f6789.js.map
