@@ -291,6 +291,7 @@ svg {
     p {
       cursor: pointer;
       padding: 2px $base * 2;
+      margin: 0;
       @include transitionNormal;
 
       &.active {
