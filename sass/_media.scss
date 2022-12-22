@@ -67,7 +67,7 @@
     }
     &__img {
       position: static;
-      padding-top: $lg;
+      margin-top: $lg;
       transform: none;
     }
 
@@ -146,10 +146,24 @@
       }
     }
   }
+  .photos {
+    &__img, &__img.big {
+      max-width: 50%;
+      min-width: 50%;
+      &Text {
+        font-size: 14px;
+      }
+    }
+  }
 }
 
 
 @media screen and (max-width: 480px) {
+  .header {
+    &__img {
+      height: 360px;
+    }
+  }
   .nav {
     width: calc(100vw + 50px);
   }
@@ -211,6 +225,11 @@
       .button {
         margin: $md auto;
       }
+    }
+  }
+  .photos {
+    &__imgTitle {
+      font-size: 18px;
     }
   }
 }

@@ -68,7 +68,7 @@ body {
     }
 
     header.dark {
-      .phone, .navigation {
+      .phone, .navigation__wrapper {
         color: $black;
       }
       .hamburger span {
@@ -98,7 +98,7 @@ a {
 header {
   &.dark {
 
-    .phone, .navigation {
+    .phone, .navigation__wrapper {
       color: $white;
     }
     .hamburger span {
@@ -220,7 +220,7 @@ svg {
   }
 }
 
-.social, .navigation, .logotype, .menu {
+.social, .navigation__wrapper, .logotype, .menu {
   position: fixed;
   z-index: 999;
   font-weight: 400;
@@ -274,13 +274,30 @@ svg {
     color: $black;
   }
 }
-
 .navigation {
-  top: $sm;
-  right: $lg;
   display: flex;
   align-items: center;
   cursor: pointer;
+
+  &__wrapper {
+    top: 10px;
+    right: $lg;
+  }
+
+  &__language {
+    font-family: "Bebas";
+    margin-right: $md;
+
+    p {
+      cursor: pointer;
+      padding: 2px $base * 2;
+      @include transitionNormal;
+
+      &.active {
+        background: $white;
+      }
+    }
+  }
 
   p {
     font: 18px Bebas;
@@ -321,6 +338,7 @@ svg {
   top: $md;
   left: $lg;
   height: $md;
+  width: 36px;
 
   &.dark {
     fill: $white;
@@ -354,13 +372,16 @@ svg {
   transform: translateX($menuWidth + 50px);
 
   &__logotype {
+    width: 95px;
+    flex-direction: column;
+    align-items: flex-start;
     font-family: Bebas;
     font-weight: 400;
-    margin-top: -110px;
+    margin-top: 0px;
 
     svg {
       height: 55px;
-      width: min-content;
+      //width: min-content;
     }
     p {
       margin-top: $sm;
@@ -397,6 +418,7 @@ svg {
   height: $md * 2;
   width: 100vw;
   display: none;
+  @include transitionNormal;
 
   &_top {
     box-shadow: 7px 0 11px 11px $gray;
@@ -836,7 +858,7 @@ svg {
   box-shadow: 1px -3px 90px 21px rgb(0 0 0 / 7%);
   background: $gray;
   h3 {
-    font: 20px  Source Sans Pro;
+    font-size: 20px;
   }
   &__wrapper {
     position: relative;
@@ -905,6 +927,10 @@ svg {
     padding: 0;
     margin: 0 $lg 0 calc($lg + $md + $sm);
     overflow: hidden;
+
+    p {
+      margin: $sm 0;
+    }
 
     li {
       display: flex;

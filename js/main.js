@@ -1,4 +1,5 @@
 import './onLoad'
+import './translate'
 import './menu'
 import './scroll'
 import './header'

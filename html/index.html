@@ -1,10 +1,10 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="ru">
 
 <head>
     <meta charset="utf-8">
-    <title>Anton</title>
-    <meta name="description" content="">
+    <title>Anton Goncharov</title>
+    <meta name="description" content="Антон Гончаров, Йога, Силовой тренинг, Оздоровительный остеопатический сеанс">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta property="og:title" content="">
@@ -13,6 +13,17 @@
     <meta property="og:image" content="">
 
     <link rel="manifest" href="../site.webmanifest">
+
+    <link rel="icon" type="image/png" sizes="64x64" href="../img/favicon/fav64.png">
+    <!-- Apple/Safari icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/fav180.png">
+    <!-- Square Windows tiles -->
+    <meta name="msapplication-square70x70logo" content="../img/favicon/fav70.png">
+    <meta name="msapplication-square150x150logo" content="../img/favicon/fav150.png">
+    <meta name="msapplication-square310x310logo" content="../img/favicon/fav310.png">
+    <!-- Rectangular Windows tile -->
+    <!-- Windows tile theme color -->
+    <meta name="msapplication-TileColor" content="#2e2e2e">
     <!-- Place favicon.ico in the root directory -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&family=Source+Sans+Pro">
@@ -52,11 +63,17 @@
                 </svg>
             </a>
         </div>
-        <div class="navigation" id="navigation">
-            <p class=" anime">Меню</p>
-            <div class="hamburger anime">
-                <span></span>
-                <span></span>
+        <div class="navigation__wrapper flex">
+            <div class="navigation__language flex anime">
+                <p class="active" data-langName="ru">ru</p>
+                <p data-langName="en">en</p>
+            </div>
+            <div class="navigation" id="navigation">
+                <p class=" anime">Меню</p>
+                <div class="hamburger anime">
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
 
@@ -125,8 +142,8 @@
             </div>
             <div class="wrapper">
                 <div class="header__greetings">
-                    <p class="header__heading anime">Приветствую дорогие гости!</p>
-                    <p class="header__description anime">Меня зовут Антон Гончаров,
+                    <p class="header__heading anime" data-lang="header.heading">Приветствую дорогие гости!</p>
+                    <p class="header__description anime" data-lang="header.description">Меня зовут Антон Гончаров,
                         более 14 лет я профессионально занимаюсь
                         телесно-ориентированной деятельностью</p>
                     <a href="#" class="button anime">Присоединиться</a>
@@ -460,7 +477,7 @@
                     <p class="photos__imgTitle">Здание красивое</p>
                     <p class="photos__imgText">Длинный текст для того что бы описать само строение
                         его историю и зачем это фото смотрим. Может еще что полезное рассказать</p>
-                    <a href="#" class="button small">Попробовать</a>
+                    <a href="#" class="button small"  data-id="yoga__price" data-scroll="true">Попробовать</a>
                 </div>
                 <img src="../img/photos_1.jpg" alt="">
             </div>
@@ -486,6 +503,9 @@
 
     <!-- Add your site or application content here -->
     <script src="../js/main.js"></script>
+
+    <script async src="https://unpkg.com/i18next@22.4.6/dist/umd/i18next.min.js"></script>
+
 
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>

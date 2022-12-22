@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	//navigation
 	anime({
-		targets: '.navigation .anime',
+		targets: '.navigation__wrapper .anime',
 		opacity: 1,
 		translateY: [-30, 0],
 		delay: anime.stagger(100, {start: 1500, direction: 'reverse'}),

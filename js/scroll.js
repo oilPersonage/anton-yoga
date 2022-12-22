@@ -1,3 +1,4 @@
+const mobileBars = [...document.querySelectorAll('.mobileBar')];
 const sections = [...document.querySelectorAll('section')];
 const sectionBlocks = sections.map(section => ({ dark: section.getAttribute('data-theme') === 'dark', section }))
 const logotype = document.querySelector('.header .logotype');
@@ -7,6 +8,8 @@ let dotContainer = document.querySelector(".header__dots");
 let activeDot = document.querySelector(".header__dots .active");
 let activeIndex = 0;
 const DOT_SIZE = 16 + 4; // высота + отступ
+
+const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
 function isVisible(elem) {
 	let coords = elem.getBoundingClientRect();
@@ -42,11 +45,15 @@ function onScroll() {
 				activeNav = findNavItem;
 
 				// установка белого цвета на черном блоке
-
 				if (sectionItem.dark) {
 					header.classList.add('dark');
 					logotype.classList.add('dark');
+
+					if (isMobile) {
+						mobileBars.forEach(el => el.style.opacity = 0)
+					}
 				} else {
+					mobileBars.forEach(el => el.style.opacity = 1)
 					header.classList.remove('dark')
 					logotype.classList.remove('dark')
 				}
