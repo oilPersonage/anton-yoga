@@ -1,3 +1,8 @@
+import anime from './libs/anime.min.js';
+
+const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+
 const mobileBars = [...document.querySelectorAll('.mobileBar')];
 const sections = [...document.querySelectorAll('section')];
 const sectionBlocks = sections.map(section => ({ dark: section.getAttribute('data-theme') === 'dark', section }))
@@ -9,17 +14,32 @@ let activeDot = document.querySelector(".header__dots .active");
 let activeIndex = 0;
 const DOT_SIZE = 16 + 4; // высота + отступ
 
-const isMobile = window.matchMedia('(max-width: 768px)').matches;
+// animate scroll
+const animationItems = isMobile ? [...document.querySelectorAll('[data-anim]:not([data-dism])')] : [...document.querySelectorAll('[data-anim]')]
 
-function isVisible(elem) {
+
+function isVisible(elem, offset = 0) {
 	let coords = elem.getBoundingClientRect();
 	let windowHeight = document.documentElement.clientHeight;
 	// верхний край элемента виден?
-	let topVisible = coords.top < windowHeight * 0.2;
+	let topVisible = coords.top < windowHeight * offset;
 
 	// нижний край элемента виден?
-	let bottomVisible = coords.bottom > windowHeight * 0.2;
+	let bottomVisible = coords.bottom > windowHeight * offset;
 
+	return topVisible && bottomVisible;
+}
+
+
+function isVisibleForAnimation(elem, offset = 0) {
+	let coords = elem.getBoundingClientRect();
+	let windowHeight = document.documentElement.clientHeight;
+	// верхний край элемента виден?
+	let topVisible = coords.top < windowHeight * offset;
+
+	// нижний край элемента виден?
+	let bottomVisible = coords.bottom > 0;
+		// console.log(coords.bottom, coords.top, windowHeight * offset)
 	return topVisible && bottomVisible;
 }
 
@@ -31,9 +51,10 @@ for (let sec of sections) {
 	dotContainer.appendChild(dot)
 }
 
-function onScroll() {
+function changeNavigation() {
+
 	for (let sectionItem of sectionBlocks) {
-		if (isVisible(sectionItem.section)) {
+		if (isVisible(sectionItem.section, 0.2)) {
 			const findNavItem = document.querySelector(`[data-id=${sectionItem.section.id}]`)
 
 			// что бы один раз при смене секции выполнялось
@@ -66,6 +87,73 @@ function onScroll() {
 			break;
 		}
 	}
+}
+
+function initAnimation() {
+	return animationItems.map(el => {
+		const dir = el.getAttribute('data-dir');
+		const show = el.getAttribute('data-show');
+		const offset = Number(el.getAttribute('data-offset')) || 0;
+		const isOpacity = el.getAttribute('data-opacity');
+
+		const horizontal = dir === 'left' || dir === 'right';
+		const vertical = dir === 'top' || dir === 'down';
+
+		return anime({
+			targets: el,
+			autoplay: false,
+			translateX: horizontal
+				? dir === 'right'
+					? show
+						? [ 0, offset]
+						: [offset, 0]
+					: show
+						? [-offset, 0]
+						: [0, -offset]
+				: 0,
+			translateY: vertical
+				? dir === 'down'
+					? show ? [offset, 0] : [0, offset]
+					: show ? [-offset, 0] : [0, -offset]
+				: 0,
+			opacity: isOpacity ? [0, 1] : 1,
+			duration: 4000,
+			easing: 'linear'
+		})
+	})
+}
+const animeScrollData = initAnimation();
+
+function scrollAnimation() {
+	animationItems.forEach((item, index) => {
+		const parent = document.getElementById(item.getAttribute('data-parent'))
+		if (isVisibleForAnimation(parent, 1)) {
+			const hiddeAnimation = !item.getAttribute('data-show') && parent.id !== 'header' ;
+
+		 // Calculate the scroll percentage position
+			// const scrollPercent = () => {
+			// 	return hiddeAnimation ? 1 + (parent.offsetHeight - window.pageYOffset) / window.innerHeight
+			// 		: (parent.offsetHeight - window.pageYOffset) / window.innerHeight;
+			// }
+			const scrollPercent = () => {
+				return hiddeAnimation ? 1 + (parent.offsetHeight - window.pageYOffset) / window.innerHeight
+					: 1 - window.pageYOffset / parent.offsetHeight;
+			}
+			console.log( window.pageYOffset / parent.offsetHeight)
+
+
+			animeScrollData[index].seek((1 - scrollPercent()) * animeScrollData[index].duration)
+		}
+	})
+}
+
+function onScroll() {
+
+	//scroll animation
+	scrollAnimation()
+
+	// navigation
+	changeNavigation()
 }
 
 window.addEventListener('scroll', onScroll)

@@ -13,6 +13,9 @@ img {
   object-fit: contain;
   height: 100%;
 }
+div[data-anim][data-parent="practices"] {
+  width: 100%;
+}
 
 @keyframes H2animation {
   0% {
@@ -466,9 +469,9 @@ svg {
   &__img {
     position: absolute;
     z-index: 3;
-    top: 50%;
+    top: 5%;
     right: 10%;
-    transform: translateY(-50%);
+    //transform: translateY(-50%);
   }
 
   &__dots {
@@ -533,8 +536,14 @@ svg {
       font-family: Source Sans Pro;
       text-transform: none;
       font-weight: 400;
-      @include transitionNormal;
       opacity: 0;
+      margin-bottom: $base * 2;
+      line-height: 1.2;
+      @include transitionNormal;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     &.active {
@@ -611,6 +620,7 @@ svg {
     position: relative;
     margin-top: $md;
     background: rgba($black, 0.03);
+    width: max-content;
   }
 
   &__tab {

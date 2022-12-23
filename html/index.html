@@ -137,10 +137,10 @@
             </svg>
         </div>
         <div class="header__content" id="headerContent">
-            <div class="header__img">
+            <div class="header__img" data-anim data-dir="down" data-parent="header" data-offset="400">
                 <img src="../img/header.png" alt="yoga man">
             </div>
-            <div class="wrapper">
+            <div class="wrapper" data-anim data-dir="top" data-parent="header" data-offset="100">
                 <div class="header__greetings">
                     <p class="header__heading anime" data-lang="header.heading">Приветствую дорогие гости!</p>
                     <p class="header__description anime" data-lang="header.description">Меня зовут Антон Гончаров,
@@ -149,18 +149,18 @@
                     <a href="#" class="button anime">Присоединиться</a>
                 </div>
             </div>
-            <div class="header__textWrapper">
+            <div class="header__textWrapper" data-anim data-dir="left" data-parent="header" data-offset="100" data-dism>
                 <div class="wrapper">
                     <div class="header__textSlider flex" id="headerTextSlider">
                         <div class="header__textItem active anime">
                             <h2>Yoga</h2>
-                            <p>Длинный текст для информации</p>
-                            <p>Длинный текст </p>
-                            <p>Длинный текст для</p>
+                            <p>Древняя практика для поиска целостности </br> в занятиях и в жизни</p>
+                            <p>Забота о своем теле, уме и дыхании </p>
+                            <p>Познание себя как внешне, так и изнутри</p>
                         </div>
                         <div class="header__textItem anime">
                             <h2>Силовой тренинг</h2>
-                            <p>Длинный текст для информации</p>
+                            <p>Техника постепенного увеличения силы мышц</p>
                             <p>Длинный текст </p>
                             <p>Длинный текст для</p>
                             <p>123123123</p>
@@ -195,63 +195,66 @@
     <section id="practices" class="practices">
         <div class="wrapper">
             <div class="flex column fullHeight">
-                <h2>ПРАКТИК<span>И</span></h2>
-                <p class="practices__description">Разработана экслюзивная технология телесных практик. <br />
-                    Преподаю групповые и персональные занятия по направлениям: </p>
-
-                <div class="practices__tabs flex">
-                    <div class="practices__absolute"></div>
-                    <div class="practices__tab active" data-tab="1">Йога</div>
-                    <div class="practices__tab" data-tab="2">Оздоровительный остеопатический сеанс</div>
-                    <div class="practices__tab" data-tab="3">Силовой тренинг</div>
+                <div data-anim data-dir="left" data-parent="practices" data-offset="100" data-show="true" data-opacity="true">
+                    <h2>ПРАКТИК<span>И</span></h2>
+                    <p class="practices__description">Разработана экслюзивная технология телесных практик. <br />
+                        Преподаю групповые и персональные занятия по направлениям: </p>
                 </div>
-                <div class="relative">
-                    <div class="practices__contentWrapper">
-                        <div class="practices__content active" data-tabContent="1">
-                            <p>Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
-                                то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
-                                используя
-                                Lorem Ipsum для распечатки образцов.
-                                Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и
-                                перешагнул
-                                в
-                                электронный дизайн.
-                                Его популяризации в новое время послужили публикация листов Letraset с образцами</p>
-                            <div class="practices__actionWrapper">
-                                <a href="#" class="button small" data-id="yoga__price" data-scroll="true">Узнать цену</a>
+                <div data-anim data-dir="down" data-parent="practices" data-offset="200" data-show="true" data-opacity="true">
+                    <div class="practices__tabs flex">
+                        <div class="practices__absolute"></div>
+                        <div class="practices__tab active" data-tab="1">Йога</div>
+                        <div class="practices__tab" data-tab="2">Оздоровительный остеопатический сеанс</div>
+                        <div class="practices__tab" data-tab="3">Силовой тренинг</div>
+                    </div>
+                    <div class="relative">
+                        <div class="practices__contentWrapper">
+                            <div class="practices__content active" data-tabContent="1">
+                                <p>Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                                    то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
+                                    используя
+                                    Lorem Ipsum для распечатки образцов.
+                                    Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и
+                                    перешагнул
+                                    в
+                                    электронный дизайн.
+                                    Его популяризации в новое время послужили публикация листов Letraset с образцами</p>
+                                <div class="practices__actionWrapper">
+                                    <a href="#" class="button small" data-id="yoga__price" data-scroll="true">Узнать цену</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="practices__content" data-tabContent="2">
-                            <p>Необходим для проработки и диагностики блоков, зажимов в теле, коррекции осанки и таза,
-                                составления индивидуальной программы тренировок для достижения необходимого результата.
-                            </p>
-                            <p>В среднее время работы 60-90 минут.</p>
-                            <p>На сеансе, используется комплексный подход, в зависимости от требуемой ситуации
-                                применяются следующие техники:</p>
-                            <ul class="practices__list">
-                                <li>Мягкие мануальные техники</li>
-                                <li>Суставная гимнастика, вытяжки</li>
-                                <li>Глубокий терапевтический массаж</li>
-                                <li>Мягкий массаж</li>
-                                <li>Массаж живота</li>
-                                <li>Краниосакральная техника</li>
-                            </ul>
-                            <div class="practices__actionWrapper">
-                                <a href="#" class="button small" data-id="osteopatia__price" data-scroll="true">Узнать цену</a>
+                            <div class="practices__content" data-tabContent="2">
+                                <p>Необходим для проработки и диагностики блоков, зажимов в теле, коррекции осанки и таза,
+                                    составления индивидуальной программы тренировок для достижения необходимого результата.
+                                </p>
+                                <p>В среднее время работы 60-90 минут.</p>
+                                <p>На сеансе, используется комплексный подход, в зависимости от требуемой ситуации
+                                    применяются следующие техники:</p>
+                                <ul class="practices__list">
+                                    <li>Мягкие мануальные техники</li>
+                                    <li>Суставная гимнастика, вытяжки</li>
+                                    <li>Глубокий терапевтический массаж</li>
+                                    <li>Мягкий массаж</li>
+                                    <li>Массаж живота</li>
+                                    <li>Краниосакральная техника</li>
+                                </ul>
+                                <div class="practices__actionWrapper">
+                                    <a href="#" class="button small" data-id="osteopatia__price" data-scroll="true">Узнать цену</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="practices__content" data-tabContent="3">
-                            <p>Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
-                                то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
-                                используя
-                                Lorem Ipsum для распечатки образцов.
-                                Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и
-                                перешагнул
-                                в
-                                электронный дизайн.
-                                Его популяризации в новое время послужили публикация листов Letraset с образцами</p>
-                            <div class="practices__actionWrapper">
-                                <a href="#" class="button small" data-id="yoga__price" data-scroll="true">Узнать цену</a>
+                            <div class="practices__content" data-tabContent="3">
+                                <p>Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                                    то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
+                                    используя
+                                    Lorem Ipsum для распечатки образцов.
+                                    Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и
+                                    перешагнул
+                                    в
+                                    электронный дизайн.
+                                    Его популяризации в новое время послужили публикация листов Letraset с образцами</p>
+                                <div class="practices__actionWrapper">
+                                    <a href="#" class="button small" data-id="yoga__price" data-scroll="true">Узнать цену</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -267,7 +270,7 @@
                 </div>
             </div>
         </div>
-        <div class="practices__img">
+        <div class="practices__img" data-anim data-dir="down" data-parent="practices" data-offset="400">
             <img src="../img/practice.png" alt="Мужчина занимающийся йога практикой">
         </div>
     </section>
