@@ -13,9 +13,6 @@ img {
   object-fit: contain;
   height: 100%;
 }
-div[data-anim][data-parent="practices"] {
-  width: 100%;
-}
 
 @keyframes H2animation {
   0% {
@@ -103,6 +100,9 @@ header {
 
     .phone, .navigation__wrapper {
       color: $white;
+    }
+    .navigation__language .active {
+      color: $black;
     }
     .hamburger span {
       background: $white;
@@ -293,8 +293,9 @@ svg {
 
     p {
       cursor: pointer;
-      padding: 2px $base * 2;
+      padding: 6px $base * 2 $base;
       margin: 0;
+      line-height: 0.8;
       @include transitionNormal;
 
       &.active {

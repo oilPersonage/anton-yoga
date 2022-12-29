@@ -39,13 +39,21 @@
     }
   }
 }
+@media screen and (max-width: 1288px) {
+  .logotype {
+    left: $md;
+  }
+  .navigation__wrapper, .social {
+    right: $md;
+  }
+
+}
 
 @media screen and (max-width: 768px) {
   section {
     padding-top: $lg;
   }
   .logotype {
-    left: $md;
     top: $sm;
   }
   .header {
@@ -93,9 +101,6 @@
     .button {
       margin: 0 auto;
     }
-  }
-  .navigation__wrapper, .social {
-    right: $md;
   }
   .arrows {
     margin-left: auto;
@@ -160,6 +165,9 @@
 
 
 @media screen and (max-width: 480px) {
+  div[data-anim][data-parent="practices"] {
+    width: 100%;
+  }
   .header {
     &__img {
       height: 360px;
@@ -175,6 +183,11 @@
         display: none;
       }
     }
+  }
+  .arrows__next, .arrows__prev {
+    height: 40px;
+    width: 40px;
+    padding: $sm;
   }
   .practices {
     &__contentWrapper {
@@ -215,7 +228,6 @@
     &__content {
       margin: 0;
       padding: $sm 0;
-      background: rgba(0,0,0,.015);
       li {
         padding: 0 $md;
         margin: 0;
