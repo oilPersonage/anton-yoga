@@ -172,6 +172,11 @@
     &__img {
       height: 360px;
     }
+    &__textItem {
+      p {
+        max-width: calc(100vw - $md * 2);
+      }
+    }
   }
   .nav {
     width: calc(100vw + 50px);
