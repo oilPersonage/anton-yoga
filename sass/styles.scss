@@ -68,14 +68,17 @@ body {
     }
 
     header.dark {
-      .phone, .navigation__wrapper {
+      .phone,
+      .navigation__wrapper {
         color: $black;
       }
       .hamburger span {
         background: $black;
       }
-      .social__icon, {
-        path { fill: $black;}
+      .social__icon {
+        path {
+          fill: $black;
+        }
       }
     }
   }
@@ -97,8 +100,8 @@ a {
 // styles for dark screen
 header {
   &.dark {
-
-    .phone, .navigation__wrapper {
+    .phone,
+    .navigation__wrapper {
       color: $white;
     }
     .navigation__language .active {
@@ -107,12 +110,13 @@ header {
     .hamburger span {
       background: $white;
     }
-    .social__icon, {
-      path { fill: $white;}
+    .social__icon {
+      path {
+        fill: $white;
+      }
     }
   }
 }
-
 
 section {
   min-height: 100vh;
@@ -168,7 +172,8 @@ svg {
   }
 }
 
-.button, a.button {
+.button,
+a.button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -223,7 +228,10 @@ svg {
   }
 }
 
-.social, .navigation__wrapper, .logotype, .menu {
+.social,
+.navigation__wrapper,
+.logotype,
+.menu {
   position: fixed;
   z-index: 999;
   font-weight: 400;
@@ -250,14 +258,14 @@ svg {
   padding: $sm $md;
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     right: 0;
     top: 0;
     background: $white;
     width: 0;
     height: 100%;
-    @include transitionFast
+    @include transitionFast;
   }
 
   &:hover {
@@ -273,7 +281,7 @@ svg {
     font-variant-numeric: oldstyle-nums;
   }
 
-  &:hover  span{
+  &:hover span {
     color: $black;
   }
 }
@@ -439,7 +447,6 @@ svg {
   position: relative;
   background: $gray;
 
-
   &__content {
     flex: 1;
     min-height: 100vh;
@@ -493,7 +500,7 @@ svg {
       top: $base;
       left: 0;
       background: $black;
-      @include transitionSlow
+      @include transitionSlow;
     }
   }
 
@@ -575,7 +582,8 @@ svg {
 }
 
 .arrows {
-  &__prev, &__next {
+  &__prev,
+  &__next {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -646,7 +654,6 @@ svg {
     //}
   }
 
-
   &__absolute {
     position: absolute;
     z-index: 1;
@@ -705,7 +712,7 @@ svg {
       margin: $base 0;
 
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         left: -$md;
         top: 10px;
@@ -728,7 +735,8 @@ svg {
     }
   }
 
-  &__price, &__priceText {
+  &__price,
+  &__priceText {
     margin-top: 0;
     font: 18px Bebas;
   }
@@ -757,7 +765,6 @@ svg {
     }
   }
 
-
   &__block {
     max-width: 764px;
     margin-top: $md * 2;
@@ -779,6 +786,8 @@ svg {
     right: 18%;
     bottom: 0;
     width: 25%;
+    transition: 0.1s linear;
+    will-change: transform;
   }
 }
 
@@ -808,6 +817,7 @@ svg {
       object-fit: cover;
       width: 100%;
       height: 100%;
+      transition: 3s linear;
     }
 
     &.big {
@@ -816,17 +826,8 @@ svg {
     }
 
     &:hover {
-      .photos__imgContent {
-        transform: translateY(-8%);
-
-        * {
-          opacity: 1;
-        }
-      }
-
       img {
         transform: scale(1.05);
-        transition: 3s linear;
       }
     }
   }
@@ -879,7 +880,7 @@ svg {
     flex-direction: column;
     margin-top: $lg;
     padding-bottom: $lg;
-    margin-left: calc(-#{$lg} + -#{$md} + -#{$sm})
+    margin-left: calc(-#{$lg} + -#{$md} + -#{$sm});
   }
   &__card {
     display: flex;
@@ -896,6 +897,7 @@ svg {
       .prices {
         &__content {
           border-top: 1px solid rgba($black, 0.1);
+          margin-bottom: $lg;
         }
         &__titleIcon {
           transform: rotate(-90deg);
@@ -914,11 +916,11 @@ svg {
     display: flex;
     flex-direction: column;
     margin-left: $md;
-    p {
-      font-size: 14px;
-      opacity: 0.5;
-      margin: $base 0 0;
-    }
+  }
+  &__time {
+    font-size: 14px;
+    opacity: 0.5;
+    margin: $base 0 0;
   }
   &__title {
     margin-top: 0;
@@ -954,24 +956,39 @@ svg {
       &:first-child {
         margin-top: $md;
       }
+
+      &.prices__buttonWrapper {
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: $md;
+        margin-bottom: $base;
+      }
     }
     .button {
-      margin-bottom: $lg;
       width: max-content;
+      margin-top: 0 !important;
+      margin-right: $md;
+    }
+  }
+
+  &__price {
+    font: 18px Bebas;
+    margin: 0;
+    span,
+    svg {
+      display: inline-block;
+      text-align: right;
+      font-size: 16px;
+      width: 16px;
+      height: 16px;
+    }
+    &_button {
+      font: 22px Bebas;
     }
   }
 }
 
-
 .knowledge {
 }
-
-
-
-
-
-
-
-
 
 @import "_media";
