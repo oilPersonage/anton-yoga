@@ -43,10 +43,10 @@
   .logotype {
     left: $md;
   }
-  .navigation__wrapper, .social {
+  .navigation__wrapper,
+  .social {
     right: $md;
   }
-
 }
 
 @media screen and (max-width: 768px) {
@@ -138,7 +138,7 @@
       z-index: 1;
       opacity: 0.2;
       width: 100%;
-      right: 53%
+      right: 53%;
     }
   }
   .prices {
@@ -153,7 +153,8 @@
     }
   }
   .photos {
-    &__img, &__img.big {
+    &__img,
+    &__img.big {
       max-width: 50%;
       min-width: 50%;
       &Text {
@@ -162,7 +163,6 @@
     }
   }
 }
-
 
 @media screen and (max-width: 480px) {
   div[data-anim][data-parent="practices"] {
@@ -189,7 +189,8 @@
       }
     }
   }
-  .arrows__next, .arrows__prev {
+  .arrows__next,
+  .arrows__prev {
     height: 40px;
     width: 40px;
     padding: $sm;
@@ -198,11 +199,14 @@
     &__contentWrapper {
       margin-bottom: $md;
     }
-    &__tab, &__content, &__bottom {
+    &__tab,
+    &__content,
+    &__bottom {
       font-size: 14px;
     }
   }
   .prices {
+    padding-bottom: $lg;
     p {
       font-size: 14px;
     }
@@ -211,9 +215,22 @@
         display: inline-block;
       }
     }
+    &__header {
+      padding-bottom: $base;
+    }
     &__wrapper {
       margin: 0;
       padding: 0;
+    }
+    &__price {
+      min-width: max-content;
+    }
+    &__buttonWrapper_mobile {
+      flex-direction: column-reverse;
+      p {
+        font-size: 22px;
+        margin-bottom: $sm;
+      }
     }
     &__card {
       margin: 0 -#{$md};
@@ -224,7 +241,8 @@
     &__header {
       padding-top: $lg;
     }
-    &__titleText, &__titleIcon {
+    &__titleText,
+    &__titleIcon {
       display: none;
     }
     &__heading {
